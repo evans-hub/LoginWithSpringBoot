@@ -17,7 +17,7 @@ public class UerController {
     public String getEmployees() {
         return "Welcome!";
     }
-    @GetMapping("/hi")
+    @GetMapping("/hello")
     public List<UserDao> getUsers(){
         return userService.listAllUsers();
     }
