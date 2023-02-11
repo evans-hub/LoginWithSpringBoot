@@ -1,5 +1,6 @@
 package com.evans.controller;
 
+import com.evans.Exceptions.InvalidCredentialsException;
 import com.evans.config.JwtTokenUtil;
 import com.evans.model.JwtRequest;
 import com.evans.model.JwtResponse;
@@ -50,7 +51,7 @@ public class JwtAuthenticationController {
 		} catch (DisabledException e) {
 			throw new Exception("USER_DISABLED", e);
 		} catch (BadCredentialsException e) {
-			throw new Exception("INVALID_CREDENTIALS", e);
+			throw new InvalidCredentialsException("INVALID_CREDENTIALS");
 		}
 	}
 }
